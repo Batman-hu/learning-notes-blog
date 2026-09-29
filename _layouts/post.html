@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="container post-shell">
+  <nav class="breadcrumb" aria-label="面包屑导航"><a href="{{ '/' | relative_url }}">首页</a><span>/</span><a href="{% if page.category == '问题记录' %}{{ '/solutions/' | relative_url }}{% else %}{{ '/notes/' | relative_url }}{% endif %}">{{ page.category | default: '文章' }}</a><span>/</span><span>正文</span></nav>
+  <div class="post-layout">
+    <article class="post-main">
+      <header class="post-header">
+        <div class="post-eyebrow"><span class="category-label">{{ page.category | default: '随笔' }}</span>{% if page.sample %}<span class="sample-label">示例文章</span>{% endif %}</div>
+        <h1>{{ page.title }}</h1>
+        <p class="post-summary">{{ page.description }}</p>
+        <div class="post-byline">
+          <time datetime="{{ page.date | date: '%Y-%m-%d' }}">发布于 {{ page.date | date: '%Y 年 %m 月 %d 日' }}</time>
+          {% if page.updated %}<span class="byline-sep">·</span><span>更新于 {{ page.updated | date: '%Y 年 %m 月 %d 日' }}</span>{% endif %}
+          <span class="byline-sep">·</span><span class="reading-time" data-word-count="{{ content | strip_html | size }}">阅读中</span>
+        </div>
+      </header>
+      <div class="post-content" id="post-content">{{ content }}</div>
+      <footer class="post-end">
+        {% if page.tags.size > 0 %}<div class="post-tags">{% for tag in page.tags %}<span># {{ tag }}</span>{% endfor %}</div>{% endif %}
+        <div class="post-end-note">写下来，是为了下次遇见时更快找到答案。</div>
+        <a href="{{ '/archive/' | relative_url }}" class="text-link">← 查看全部文章</a>
+      </footer>
+    </article>
+    <aside class="post-aside" aria-label="文章导航">
+      <div class="aside-sticky">
+        <p class="aside-kicker">本篇目录</p>
+        <nav id="post-toc" class="post-toc" aria-label="本篇目录"></nav>
+        <a class="aside-back" href="{{ '/' | relative_url }}">← 返回首页</a>
+      </div>
+    </aside>
+  </div>
+</div>

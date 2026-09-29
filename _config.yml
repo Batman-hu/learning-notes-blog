@@ -1,0 +1,23 @@
+title: 慢慢写
+description: 记录学到的东西，也记录问题是怎样解决的。
+author: Batman-hu
+email: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+url: "https://Batman-hu.github.io"
+baseurl: "/learning-notes-blog"
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+highlighter: rouge
+show_excerpts: true
+future: false
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

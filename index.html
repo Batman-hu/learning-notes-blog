@@ -1,0 +1,57 @@
+---
+layout: default
+title: 首页
+section: home
+description: 学习笔记与问题记录，清楚地留下过程和答案。
+---
+<section class="hero container">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="eyebrow-dot"></span> 一处持续更新的个人知识角落</div>
+    <h1>写下学到的，<br><em>也写下怎么解决的。</em></h1>
+    <p>这里收集学习中的新发现，也认真记录遇到的问题、排查的过程和最后的答案。让每次解决问题，都成为下一次的起点。</p>
+    <div class="hero-actions">
+      <a class="button-primary" href="#latest">开始阅读 <span aria-hidden="true">↘</span></a>
+      <a class="button-text" href="{{ '/about/' | relative_url }}">了解这个博客 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="hero-note" aria-hidden="true">
+    <div class="note-top"><span class="note-dot"></span><span>NOTE / 001</span><span>✳</span></div>
+    <div class="note-lines"><span></span><span></span><span></span><span></span></div>
+    <p>Keep learning.<br>Keep solving.<br>Keep notes.</p>
+    <div class="note-bottom"><span>LEARNING LOG</span><span>↗</span></div>
+  </div>
+</section>
+
+<div class="container home-grid" id="latest">
+  <section class="latest-section" aria-labelledby="latest-title">
+    <div class="section-heading">
+      <div><p class="section-number">01 / 最新记录</p><h2 id="latest-title">最近写下的内容</h2></div>
+      <a class="text-link desktop-link" href="{{ '/archive/' | relative_url }}">全部文章 <span aria-hidden="true">↗</span></a>
+    </div>
+    {% if site.posts.size > 0 %}
+      <div class="post-list">{% for post in site.posts limit: 5 %}{% include post-card.html post=post %}{% endfor %}</div>
+    {% else %}
+      <div class="empty-state"><p>这里会慢慢收集学习记录与问题解法。</p><span>第一篇文章，随时可以开始。</span></div>
+    {% endif %}
+    <a class="text-link mobile-link" href="{{ '/archive/' | relative_url }}">查看全部文章 <span aria-hidden="true">↗</span></a>
+  </section>
+
+  <aside class="home-aside" aria-label="内容索引">
+    <div class="aside-block">
+      <p class="section-number">02 / 按主题阅读</p>
+      <h2>内容索引</h2>
+      <a class="topic-link" href="{{ '/notes/' | relative_url }}"><span class="topic-icon">↗</span><span><strong>学习笔记</strong><small>概念、实践与心得</small></span><span class="topic-arrow">→</span></a>
+      <a class="topic-link" href="{{ '/solutions/' | relative_url }}"><span class="topic-icon">⌁</span><span><strong>问题记录</strong><small>现象、排查与解法</small></span><span class="topic-arrow">→</span></a>
+    </div>
+    <div class="aside-message">
+      <span class="quote-mark">“</span>
+      <p>理解一件事最好的方式之一，就是试着把它讲清楚。</p>
+      <span class="aside-caption">关于这个博客</span>
+    </div>
+  </aside>
+</div>
+
+<section class="container bottom-band">
+  <div><p class="section-number">03 / 继续探索</p><h2>把零散的收获，<br>整理成可以回看的答案。</h2></div>
+  <a href="{{ '/archive/' | relative_url }}" aria-label="浏览文章归档">浏览文章归档 <span aria-hidden="true">↗</span></a>
+</section>

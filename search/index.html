@@ -1,0 +1,12 @@
+---
+layout: default
+title: 搜索
+section: search
+description: 搜索学习笔记和问题记录。
+---
+<div class="container page-shell search-shell">
+  <header class="page-intro"><p class="section-number">SEARCH / 站内搜索</p><h1>找到你要的<em>那篇记录。</em></h1><p>输入关键词，搜索标题、摘要、分类和标签。</p></header>
+  <label class="search-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="site-search" type="search" placeholder="例如：报错、环境配置、学习方法…" autocomplete="off" autofocus><span>/ 搜索</span></label>
+  <div class="search-status" id="search-status" aria-live="polite">输入关键词开始搜索。</div>
+  <div class="post-list" id="search-results" data-index-url="{{ '/search.json' | relative_url }}"></div>
+</div>

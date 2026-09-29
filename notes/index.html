@@ -1,0 +1,12 @@
+---
+layout: default
+title: 学习笔记
+section: notes
+description: 记录概念、实践与新的理解。
+---
+<div class="container page-shell">
+  <header class="page-intro"><p class="section-number">LEARNING NOTES / 学习笔记</p><h1>把新知识，<em>整理成自己的理解。</em></h1><p>从一个概念、一段代码到一次实践，留下真正想明白的部分。</p></header>
+  <div class="listing-heading"><h2>所有学习笔记</h2><span>{% assign count = 0 %}{% for post in site.posts %}{% if post.category == '学习笔记' %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}{{ count }} 篇</span></div>
+  <div class="post-list">{% for post in site.posts %}{% if post.category == '学习笔记' %}{% include post-card.html post=post %}{% endif %}{% endfor %}</div>
+  {% if count == 0 %}<div class="empty-state">还没有学习笔记。新的发现，可以从这里开始记录。</div>{% endif %}
+</div>

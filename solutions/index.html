@@ -1,0 +1,12 @@
+---
+layout: default
+title: 问题记录
+section: solutions
+description: 记录问题的现象、排查过程、原因与解决方法。
+---
+<div class="container page-shell">
+  <header class="page-intro"><p class="section-number">PROBLEM SOLVING / 问题记录</p><h1>遇到的问题，<em>留下清楚的解法。</em></h1><p>把现象、尝试、原因和验证写完整。下次遇见，就不必从头来过。</p></header>
+  <div class="listing-heading"><h2>所有问题记录</h2><span>{% assign count = 0 %}{% for post in site.posts %}{% if post.category == '问题记录' %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}{{ count }} 篇</span></div>
+  <div class="post-list">{% for post in site.posts %}{% if post.category == '问题记录' %}{% include post-card.html post=post %}{% endif %}{% endfor %}</div>
+  {% if count == 0 %}<div class="empty-state">还没有问题记录。解决的第一个难题，可以从这里开始写。</div>{% endif %}
+</div>

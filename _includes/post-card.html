@@ -1,0 +1,15 @@
+<article class="post-card">
+  <div class="post-card-meta">
+    <span class="category-label">{{ include.post.category | default: '随笔' }}</span>
+    <time datetime="{{ include.post.date | date: '%Y-%m-%d' }}">{{ include.post.date | date: '%Y.%m.%d' }}</time>
+    {% if include.post.sample %}<span class="sample-label">示例</span>{% endif %}
+  </div>
+  <h3><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h3>
+  <p>{{ include.post.description | default: include.post.excerpt | strip_html | truncate: 100 }}</p>
+  <div class="post-card-bottom">
+    <div class="tags">
+      {% for tag in include.post.tags limit: 3 %}<span># {{ tag }}</span>{% endfor %}
+    </div>
+    <a href="{{ include.post.url | relative_url }}" class="read-link" aria-label="阅读：{{ include.post.title }}">阅读文章 <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
