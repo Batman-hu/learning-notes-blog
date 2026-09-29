@@ -2,9 +2,9 @@
 
 一个使用 GitHub Pages 原生 Jekyll 构建的中文博客。首页、分类、归档、站内搜索、RSS、深浅色模式和移动端布局都已备好；写文章只需新增 Markdown 文件。
 
-## 发布到 GitHub Pages
+## 启用 GitHub Pages
 
-项目预设仓库名为 **`learning-notes-blog`**。在 GitHub 创建同名**公开**仓库，把这个文件夹中的全部文件上传到仓库根目录，并提交到 `main` 分支。
+本站源码位于 [Batman-hu/learning-notes-blog](https://github.com/Batman-hu/learning-notes-blog)，已放在公开仓库的 `main` 分支根目录。
 
 打开仓库 **Settings → Pages → Build and deployment**，将 **Source** 设为 **Deploy from a branch**，分支选 **`main`**，目录选 **`/(root)`**，保存。GitHub Pages 会自动运行 Jekyll 构建。发布完成后，地址通常是：
 
@@ -12,7 +12,7 @@
 https://Batman-hu.github.io/learning-notes-blog/
 ```
 
-发布前，编辑 `_config.yml`：
+`_config.yml` 已按当前 GitHub 账号与仓库名配置：
 
 ```yml
 title: 你的博客名称
